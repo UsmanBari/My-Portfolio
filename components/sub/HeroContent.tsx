@@ -15,18 +15,23 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col-reverse md:flex-row items-center justify-center px-6 sm:px-10 md:px-20 mt-20 md:mt-40 w-full z-[20] gap-10 md:gap-20"
+      className="flex flex-col-reverse md:flex-row items-center justify-center px-6 sm:px-10 md:px-20 mt-20 md:mt-40 w-full z-[20] gap-10 md:gap-20 overflow-x-hidden"
     >
       {/* Left Content */}
       <div className="w-full flex flex-col gap-5 justify-center text-start">
         {/* Small top badge */}
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-2 px-3 border border-[#7042f88b] opacity-90 flex items-center text-sm sm:text-base"
+          className="Welcome-box py-2 px-3 border border-[#7042f88b] opacity-90 flex items-center text-sm sm:text-base max-w-full"
         >
-          <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5" />
-          <h1 className="Welcome-text">
+          <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5 flex-shrink-0" />
+          {/* Desktop/Laptop Full Text */}
+          <h1 className="Welcome-text hidden sm:block break-words whitespace-normal">
             Usman Bari – BS-CS Student at FAST NUCES Islamabad
+          </h1>
+          {/* Mobile Short Text */}
+          <h1 className="Welcome-text block sm:hidden break-words whitespace-normal">
+            Usman Bari – BS-CS Student
           </h1>
         </motion.div>
 
@@ -45,20 +50,21 @@ const HeroContent = () => {
         </motion.div>
 
         {/* Short bio */}
-<motion.p
-  variants={slideInFromLeft(0.8)}
-  className="text-base sm:text-lg text-gray-400 my-5 max-w-[600px] text-justify"
->
-  I&apos;m{" "}
-  <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-    Usman Bari
-  </span>
-  , a 3rd-year BS Computer Science student at FAST NUCES Islamabad.
-  I am interested in web development, with a major focus on front-end development,
-  where I have built a number of projects. I also have experience developing C++ projects
-  including games using SFML and GLUT, with my work spanning from sleek web designs
-  to problem-solving through programming.
-</motion.p>
+        <motion.p
+          variants={slideInFromLeft(0.8)}
+          className="text-base sm:text-lg text-gray-400 my-5 max-w-[600px] text-justify"
+        >
+          I&apos;m{" "}
+          <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            Usman Bari
+          </span>
+          , a 3rd-year BS Computer Science student at FAST NUCES Islamabad. I am
+          interested in web development, with a major focus on front-end
+          development, where I have built a number of projects. I also have
+          experience developing C++ projects including games using SFML and
+          GLUT, with my work spanning from sleek web designs to problem-solving
+          through programming.
+        </motion.p>
 
         {/* Button */}
         <motion.a
