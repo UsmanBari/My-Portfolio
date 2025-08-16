@@ -1,74 +1,66 @@
-import React from "react";
-import {
-  RxDiscordLogo,
-  RxGithubLogo,
-  RxInstagramLogo,
-  RxTwitterLogo,
-  RxLinkedinLogo,
-} from "react-icons/rx";
+"use client";
 
-import { FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] ">
-        <div className="w-full flex flex-col items-center justify-center m-auto">
-            <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
-                
+    <footer className="w-full bg-[#030014] py-6 mt-16 border-t border-gray-700 relative z-50">
+      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-6">
+        
+        {/* Text */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-gray-400 text-sm text-center md:text-left"
+        >
+          © {new Date().getFullYear()} Usman Bari. All rights reserved.
+        </motion.p>
 
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">Community</div>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Youtube</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Github</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Discord</span>    
-                    </p>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">Social Media</div>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Instagram</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Twitter</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Linkedin</span>    
-                    </p>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">About</div>
-                   <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                     
-                        <span className="text-[15px] ml-[6px]">Become Sponsor</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                      
-                        <span className="text-[15px] ml-[6px]">Learning about me</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                  
-                        <span className="text-[15px] ml-[6px]">mifwebchain@gmail.com</span>    
-                    </p>
-                </div>
-            </div>
+        {/* Socials */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex gap-6 text-gray-400 relative z-50"
+        >
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/usman-bari-0b6806279/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            className="hover:text-[#0077b5] transition-colors duration-300 transform hover:scale-110"
+          >
+            <FaLinkedin size={28} />
+          </a>
 
-            <div className="mb-[20px] text-[15px] text-center">
-                &copy; WebChain Dev 2023 Inc. All rights reserved
-            </div>
-        </div>
-    </div>
-  )
-}
+          {/* GitHub */}
+          <a
+            href="https://github.com/UsmanBari"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            className="hover:text-white transition-colors duration-300 transform hover:scale-110"
+          >
+            <FaGithub size={28} />
+          </a>
 
-export default Footer
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/usmanbari.ub/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram profile"
+            className="hover:text-pink-500 transition-colors duration-300 transform hover:scale-110"
+          >
+            <FaInstagram size={28} />
+          </a>
+        </motion.div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

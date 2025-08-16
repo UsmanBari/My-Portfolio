@@ -15,57 +15,72 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="flex flex-col-reverse md:flex-row items-center justify-center px-6 sm:px-10 md:px-20 mt-20 md:mt-40 w-full z-[20] gap-10 md:gap-20"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      {/* Left Content */}
+      <div className="w-full flex flex-col gap-5 justify-center text-start">
+        {/* Small top badge */}
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
+          className="Welcome-box py-2 px-3 border border-[#7042f88b] opacity-90 flex items-center text-sm sm:text-base"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
+          <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5" />
+          <h1 className="Welcome-text">
+            Usman Bari – BS-CS Student at FAST NUCES Islamabad
           </h1>
         </motion.div>
 
+        {/* Main heading */}
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-4 text-4xl sm:text-5xl md:text-6xl font-bold text-white max-w-[600px] leading-tight"
         >
           <span>
-            Providing
+            Learning,{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              {" "}
-              the best{" "}
-            </span>
-            project exprience
+              Building,
+            </span>{" "}
+            Improving
           </span>
         </motion.div>
 
-        <motion.p
-          variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
-        >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
-        </motion.p>
+        {/* Short bio */}
+<motion.p
+  variants={slideInFromLeft(0.8)}
+  className="text-base sm:text-lg text-gray-400 my-5 max-w-[600px] text-justify"
+>
+  I&apos;m{" "}
+  <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+    Usman Bari
+  </span>
+  , a 3rd-year BS Computer Science student at FAST NUCES Islamabad.
+  I am interested in web development, with a major focus on front-end development,
+  where I have built a number of projects. I also have experience developing C++ projects
+  including games using SFML and GLUT, with my work spanning from sleek web designs
+  to problem-solving through programming.
+</motion.p>
+
+        {/* Button */}
         <motion.a
           variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          href="#projects"
+          className="py-2 px-6 button-primary text-center text-white cursor-pointer rounded-lg max-w-[180px] sm:max-w-[200px] text-sm sm:text-base"
         >
-          Learn More!
+          View My Work
         </motion.a>
       </div>
 
+      {/* Right Image */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="flex justify-center items-center w-full"
       >
         <Image
           src="/mainIconsdark.svg"
-          alt="work icons"
-          height={650}
-          width={650}
+          alt="Development illustration"
+          width={600}
+          height={600}
+          className="w-[280px] sm:w-[400px] md:w-[600px] h-auto"
         />
       </motion.div>
     </motion.div>
