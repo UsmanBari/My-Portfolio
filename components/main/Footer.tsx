@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#030014] py-6 mt-16 border-t border-gray-700 relative z-50">
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-6">
+    <footer className="w-full bg-[#030014] py-6 mt-16 border-t border-gray-700">
+      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-6 px-4 md:px-6">
         
         {/* Text */}
         <motion.p
@@ -23,7 +23,7 @@ const Footer = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex gap-6 text-gray-400 relative z-50"
+          className="flex gap-4 md:gap-6 text-gray-400"
         >
           {/* LinkedIn */}
           <a
@@ -33,7 +33,7 @@ const Footer = () => {
             aria-label="LinkedIn profile"
             className="hover:text-[#0077b5] transition-colors duration-300 transform hover:scale-110"
           >
-            <FaLinkedin size={28} />
+            <FaLinkedin size={24} />
           </a>
 
           {/* GitHub */}
@@ -44,7 +44,7 @@ const Footer = () => {
             aria-label="GitHub profile"
             className="hover:text-white transition-colors duration-300 transform hover:scale-110"
           >
-            <FaGithub size={28} />
+            <FaGithub size={24} />
           </a>
 
           {/* Instagram */}
@@ -55,7 +55,7 @@ const Footer = () => {
             aria-label="Instagram profile"
             className="hover:text-pink-500 transition-colors duration-300 transform hover:scale-110"
           >
-            <FaInstagram size={28} />
+            <FaInstagram size={24} />
           </a>
         </motion.div>
       </div>
