@@ -769,7 +769,7 @@ export default function App() {
 
                         {/* LinkedIn channel */}
                         <a 
-                          href="https://linkedin.com"
+                          href="https://www.linkedin.com/in/usman-bari-0b6806279/"
                           target="_blank"
                           referrerPolicy="no-referrer"
                           rel="noopener noreferrer"
@@ -778,7 +778,7 @@ export default function App() {
                           <div>
                             <span className="text-[8px] font-mono uppercase text-zinc-500 block mb-0.5">PROFESSIONAL HUB</span>
                             <span className="text-xs font-semibold text-zinc-300 font-mono group-hover:text-brand-green transition-colors">
-                              linkedin.com (Connect Link)
+                              linkedin.com/in/usman-bari-0b6806279/
                             </span>
                           </div>
                           <ArrowUpRight className="w-4 h-4 text-[#89AACC] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all shrink-0" />

@@ -60,7 +60,7 @@ export default function Navigation() {
           
           <motion.a
             whileHover={{ scale: 1.1, backgroundColor: "rgba(44,92,136,0.15)" }}
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/usman-bari-0b6806279/"
             target="_blank"
             referrerPolicy="no-referrer"
             rel="noopener noreferrer"
