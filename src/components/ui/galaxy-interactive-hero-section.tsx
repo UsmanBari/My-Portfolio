@@ -275,28 +275,26 @@ export function HeroSection() {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="min-h-[3rem] sm:min-h-[2.5rem] flex items-center justify-start text-sm sm:text-base text-white/50 font-normal font-sans tracking-wide"
               >
-                <p className="flex items-center flex-wrap">
-                  <TextScramble 
-                    key={`prefix-${roleIdx}`} 
-                    text={CYCLING_ROLES[roleIdx].prefix} 
-                    triggerOnHover={false} 
-                    speed={20} 
-                  />
-                  <span className="font-display italic font-normal text-white text-[16px] sm:text-[18px] px-1">
-                    <TextScramble 
-                      key={`role-${roleIdx}`} 
-                      text={CYCLING_ROLES[roleIdx].role} 
-                      triggerOnHover={false} 
-                      speed={15} 
-                    />
-                  </span>
-                  <TextScramble 
-                    key={`suffix-${roleIdx}`} 
-                    text={CYCLING_ROLES[roleIdx].suffix} 
-                    triggerOnHover={false} 
-                    speed={20} 
-                  />
-                </p>
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={roleIdx}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex items-center flex-wrap"
+                  >
+                    <span>{CYCLING_ROLES[roleIdx].prefix}</span>
+                    <span className="font-display italic font-normal text-white text-[16px] sm:text-[18px] px-1">
+                      <TextScramble 
+                        text={CYCLING_ROLES[roleIdx].role} 
+                        triggerOnHover={false} 
+                        speed={15} 
+                      />
+                    </span>
+                    <span>{CYCLING_ROLES[roleIdx].suffix}</span>
+                  </motion.p>
+                </AnimatePresence>
               </motion.div>
             </div>
 
