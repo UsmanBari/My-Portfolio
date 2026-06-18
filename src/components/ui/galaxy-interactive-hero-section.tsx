@@ -278,19 +278,15 @@ export function HeroSection() {
                 <AnimatePresence mode="wait">
                   <motion.p
                     key={roleIdx}
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.3 }}
+                    initial={{ opacity: 0, y: 8, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, y: -8, filter: "blur(4px)" }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     className="flex items-center flex-wrap"
                   >
                     <span>{CYCLING_ROLES[roleIdx].prefix}</span>
                     <span className="font-display italic font-normal text-white text-[16px] sm:text-[18px] px-1">
-                      <TextScramble 
-                        text={CYCLING_ROLES[roleIdx].role} 
-                        triggerOnHover={false} 
-                        speed={15} 
-                      />
+                      {CYCLING_ROLES[roleIdx].role}
                     </span>
                     <span>{CYCLING_ROLES[roleIdx].suffix}</span>
                   </motion.p>
